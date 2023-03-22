@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap');
+
+
+.image-container{
+  margin: 1rem;
+  padding: 2rem;
+  display: flex;
+  height: 14rem;
+  justify-content: center;
+}
+
+.post{
+  margin: 1rem;
+  padding: 4rem;
+}
+
+nav{
+    padding: 2rem;
+    padding-bottom: 2rem;
+}
+
+h1 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-family: 'Gambetta', serif;
+    letter-spacing: -3px;
+    transition: 700ms ease;
+    font-variation-settings: "wght" 311;
+    margin-bottom: 0.8rem;
+    color: rgb(255, 247, 253);
+    outline: none;
+    text-align: center;
+  }
+  
+  h1:hover {
+    font-variation-settings: "wght" 582; 
+    letter-spacing: 1px;
+  }
+  
+  p {
+    font-size: 1.2em;
+    line-height: 150%;
+    text-align: center;
+    color: rgb(250, 244, 244);
+    letter-spacing: .5px;
+  }

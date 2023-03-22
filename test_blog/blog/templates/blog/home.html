@@ -1,0 +1,39 @@
+<div>
+{% extends 'blog/base.html'%}
+{% block extrahead %}
+
+<link rel="stylesheet" href="/test_blog/blog/static/home.css">
+<link rel="stylesheet" href="/test_blog/blog/static/button.css">
+<link rel="stylesheet" href="/test_blog/blog/static/main.css">
+
+{% endblock %}
+    <hr>
+    {% block content  %}
+    <div class="post">
+    <h1>Lufsum Murka!</h1>
+    <p>Welcome to image board for wannabies</p>
+    <div class="description-content">
+        <ul>
+            <li>
+                <div class="image-container">
+                    <img src="/test_blog/blog/static/assets/Murka.png" alt="" srcset="">
+                </div>
+            </li>
+
+            <li>
+                <p>Thou art mistaken, for in this moment, thine being is entranced in a state of slumber.</p>
+            </li>
+        </ul>
+    </div>
+
+    </div>
+    <div class="post-content">
+    {% for post in posts %}
+        <h3>{{post.title}}</h3>
+        <p>{{post.content}}</p>
+        <p>By: <strong>{{post.author}}</strong> on <b>{{post.date}}</b></p>
+    {% endfor%}
+    </div>
+    
+    {% endblock  %}
+</div>

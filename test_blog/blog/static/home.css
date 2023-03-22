@@ -1,0 +1,13 @@
+body {
+    align-items: center;
+    background-color: #000;
+    display:ruby;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  nav{
+    padding: 2rem;
+}
+
+  
