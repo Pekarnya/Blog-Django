@@ -61,8 +61,15 @@
   .front > img {
     border-radius: 12px;
   }
+
+  .name{
+    text-align: center;
+    text-decoration: wavy;
+  }
+
   .front .name {
     margin: 0.75em 0;
+
   }
   .front .status {
     display: flex;

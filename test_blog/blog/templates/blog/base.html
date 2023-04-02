@@ -15,18 +15,21 @@
       <ul class="menu-bar">
         <a href="{% url 'blog-home'%}"><li class ="before">
           Verily, observe now</li></a>
-        <a href=""><li class ="before">
+        <a href="{%url 'blog-login'%}"><li class ="before">
           Participate</li></a>
           <a href="{%url 'blog-about'%}"><li class ="before">
             Asecgen</a>
         </li>
       </ul>
     </nav>
+    <div>
+      
+    {% block content %}
+    {%endblock content%}
+    </div>
   </div>
     
 
-    {% block content %}
-    {%endblock content%}
 
 </body>
 </html>
