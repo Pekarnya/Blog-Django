@@ -4,7 +4,6 @@ Returns:
 """
 from django.shortcuts import render, redirect
 # from django.http import HttpResponse
-from django.shortcuts import  render
 from .forms import NewUserForm
 from django.contrib import messages
 # Create your views here.
@@ -63,3 +62,37 @@ def login(request):
         _type_: login.html
     """
     return render(request, 'blog/login.html')
+
+
+def goods(request):
+    """Post method with list of merchendise
+
+    Args:
+        request (Any): get request
+
+    returns:
+        _type_: goods.html
+    """
+    return render(request, 'blog/goods.html')
+
+
+def godown(request):
+    """Render a godown page
+
+    Args: request (Any): get request
+
+    returns:
+        _type_: godown.html
+    """
+    return render(request, 'blog/godown.html')
+
+
+def contacts(request):
+    """Render a contact page
+    
+    Args: request (Any): get request
+    
+    returns:
+        _type_: contacts.html
+    """
+    return render(request, 'blog/contacts.html')

@@ -1,0 +1,64 @@
+<div>
+    {% extends 'blog/base.html'%}
+    {% block extrahead %}
+    <link rel="stylesheet" href="/test_blog/blog/static/main.css">
+    <link rel="stylesheet" href="/test_blog/blog/static/goods.css">
+    <link rel="stylesheet" href="/test_blog/blog/static/blog.css">
+    <script src="/test_blog/blog/static/js/goods.js"></script>
+    {%endblock%}
+</div>
+
+    {%block content%}
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+<div class="container">
+	<div class="card">
+		<figure class="card__thumb">
+			<img src="https://images.unsplash.com/photo-1524778219663-26b4a0ccc132?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="Picture by Kyle Cottrell" class="card__image">
+			<figcaption class="card__caption">
+				<h2 class="card__title">Address</h2>
+				<p class="card__snippet">
+                We are pleased to inform you that our company, Murka, is now located 
+                at 45 High Street, Stratford-upon-Avon. We are dedicated to providing 
+                the highest quality goods and services to our valued customers.
+                Thank you for your continued patronage.
+                Sincerely, Murka Trading
+                </p>
+				<a href="" class="card__button">Read more</a>
+			</figcaption>
+		</figure>
+	</div>
+
+	<div class="card">
+		<figure class="card__thumb">
+			<img src="https://images.unsplash.com/photo-1586769852044-692d6e3703f0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="Picture by Nathan Dumlao" class="card__image">
+			<figcaption class="card__caption">
+				<h2 class="card__title">Contact us</h2>
+				<p class="card__snippet">
+                <ul>
+                <li>
+                - Sales: <br>555-1234
+                </li>
+                <li>- Customer Support: <br>555-5678</li>
+                <li>- Technical Support: <br>555-9012</li>
+                <li>- Billing: <br>555-3456</li>
+                <li>- HR: <br>555-7890</li>
+                </ul>
+                </p>
+				<a href="" class="card__button">Read more</a>
+			</figcaption>
+		</figure>
+	</div>
+
+	<div class="card">
+		<figure class="card__thumb">
+			<img src="https://images.unsplash.com/photo-1522683280249-025c6e03d311?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="Picture by Daniel Lincoln" class="card__image">
+			<figcaption class="card__caption">
+				<h2 class="card__title">What reason have you to join us?</h2>
+				<p class="card__snippet">We are such stuff as dreams are made on</p>
+				<a href="" class="card__button">Read more</a>
+			</figcaption>
+		</figure>
+	</div>
+</div>
+    {%endblock%}
