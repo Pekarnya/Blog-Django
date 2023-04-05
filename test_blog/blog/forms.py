@@ -16,8 +16,9 @@ class NewUserForm(UserCreationForm):
     class Meta:
         """Fields and date for sending to POST methods"""
         model = User
-        fields = UserCreationForm.Meta.fields + ("username", "email", "password")
-        
+        fields = UserCreationForm.Meta.fields + ("username", "email",
+                                                 "password")
+
         def save(self, commit=True):
             """Saving user data to database
 
