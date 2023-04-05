@@ -95,3 +95,7 @@ h1 {
     color: rgb(250, 244, 244);
     letter-spacing: .5px;
   }
+
+  .container{
+    border-radius: 1rem;
+  }
