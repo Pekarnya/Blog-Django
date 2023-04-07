@@ -5,6 +5,7 @@ Returns:
 from django.shortcuts import render, redirect
 from django.contrib import messages, auth
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 from .models import Profile
 
 # Create your views here.
@@ -63,7 +64,7 @@ def register_page(request):
         user = auth.authenticate(username=username, password=password)
         if user is not None:
             auth.login(request, user)
-            return redirect('blog-register')
+            return redirect('blog-welcome')
         else:
             messages.info(request, 'Login failed')
             return redirect('blog-register')
@@ -72,6 +73,7 @@ def register_page(request):
         return render(request, template_name='blog/login.html')
 
 
+@login_required(login_url='blog-register')
 def logout(request):
     """
     logout logout the current user from site
@@ -150,3 +152,9 @@ def contacts(request):
         _type_: contacts.html
     """
     return render(request, 'blog/contacts.html')
+
+
+@login_required(login_url='blog-register')
+def welcome_page(request):
+    """Returns a welcome page"""
+    return render(request, 'blog/profile/start-page.html')

@@ -1,0 +1,17 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amiko&display=swap');
+
+:root{
+    --text-color: #F2F2F2;
+    --btn-color: #FFCCCB;
+    --arrow-color: #0F1B44;
+    --linear: #03080C;
+}
+
+body{
+    background-image: url("/test_blog/blog/static/assets/profile_img/starting-page-logo.jpg");
+}
+.main{
+    background-image: url("/test_blog/blog/static/assets/profile_img/starting-page-logo.jpg");
+}
