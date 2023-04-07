@@ -3,7 +3,7 @@ Returns:
     _type_: DOM object
 """
 from django.shortcuts import render, redirect
-from django.contrib import messages
+from django.contrib import messages, auth
 from django.contrib.auth.models import User
 from .models import Profile
 
@@ -28,7 +28,7 @@ def register_page(request):
         Profile.objects.create: Creates new profile
     """
 
-    if request.method == 'POST':
+    if 'sign-up' in request.POST and request.method == 'POST':
         username = request.POST['username']
         email = request.POST['email']
         pass1 = request.POST['password1']
@@ -53,10 +53,20 @@ def register_page(request):
                 new_profile = Profile.objects.create(user=user_model,
                                                      id=user_model.id)
                 new_profile.save()
-                return redirect('blog-login')
+                return redirect('blog-register')
         else:
             messages.info(request, 'Passwords do not match')
             return redirect('blog-register')
+    elif 'login' in request.POST and request.method == 'POST':
+        username = request.POST['username-auth']
+        password = request.POST['password-auth']
+        user = auth.authenticate(username=username, password=password)
+        if user is not None:
+            auth.login(request, user)
+            return render(request, 'blog/home.html')
+        else:
+            messages.info(request, 'Login failed')
+            return render(request, 'blog/home.html')
 
     else:
         return render(request, template_name='blog/login.html')
