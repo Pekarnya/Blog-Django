@@ -63,13 +63,27 @@ def register_page(request):
         user = auth.authenticate(username=username, password=password)
         if user is not None:
             auth.login(request, user)
-            return render(request, 'blog/home.html')
+            return redirect('blog-register')
         else:
             messages.info(request, 'Login failed')
-            return render(request, 'blog/home.html')
+            return redirect('blog-register')
 
     else:
         return render(request, template_name='blog/login.html')
+
+
+def logout(request):
+    """
+    logout logout the current user from site
+
+    Args:
+        request (HttpRequest): Django MetadataRequest object
+
+    Returns:
+        redirect: blog-register
+    """    """"""
+    auth.logout(request)
+    return redirect('blog-register')
 
 
 def home(request):
