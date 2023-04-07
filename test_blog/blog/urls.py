@@ -17,4 +17,5 @@ urlpatterns = [
     path('godown/', views.godown, name='blog-godown'),
     path('contacts/', views.contacts, name='blog-contacts'),
     path('check/', views.login, name='blog-check'),
+    path('logout/', views.logout, name='blog-logout'),
 ]
