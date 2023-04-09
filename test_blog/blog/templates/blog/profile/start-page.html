@@ -11,7 +11,7 @@
     <div class="main">
         <div class="welcome-msg">
             <h1 class="user-get">Welcome {{user.get_username}}!</h1>
-            <button class="welcome-btn">Get started</button>
+            <button onclick=location.href="{% url 'blog-profile'%}" class="welcome-btn">Get started</button>
         </div>
         <div></div>
     </div>

@@ -158,3 +158,9 @@ def contacts(request):
 def welcome_page(request):
     """Returns a welcome page"""
     return render(request, 'blog/profile/start-page.html')
+
+
+@login_required(login_url='blog-register')
+def profile(request):
+    """Render profile page, main functionality"""
+    return render(request, 'blog/profile/profile.html')
