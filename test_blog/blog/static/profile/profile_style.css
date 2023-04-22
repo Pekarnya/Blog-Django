@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Loved+by+the+King&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sarala&display=swap');
+
+
+:root {
+	--header-font:'Work Sans', sans-serif;
+	--title-font:'Loved by the King', cursive;
+	--regular-font: 'Sarala', sans-serif;
+	--paragraph-size: 2rem;
+	--main-color: #cf3b5f;
+	--second-purple: #ec5c8c;
+	--blue-color: #6485a2;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: var(--regular-font);
+	z-index: 1000;
+	scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar{
+	display: none;
+  }
+
+body{
+	min-height: 100vh;
+	background: -webkit-linear-gradient(90deg, #af0ca9,#ec5c8c,#6485a2);/* Chrome 10-25, Safari 5.1-6 */                          
+	background: linear-gradient(90deg, #af0ca9,#ec5c8c,#6485a2);/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */                                             
+}
+
+header{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 1.8rem 6.2rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 2000;
+}
+
+header .logo{
+	color: #ffffff;
+	font-weight: 700;
+	text-decoration: none;
+	font-size: 2em;
+	text-transform: uppercase;
+	letter-spacing: 0.125rem;
+}
+
+header ul{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+header ul li{
+	list-style: none;
+	margin-left: 1.25rem;
+}
+
+header ul li a{
+	text-decoration: none;
+	padding: 6px 15px;
+	color: #ffffff;
+	border-radius: 20px;
+}
+
+header ul li a:hover, 
+header ul li a.active{
+	background: #ffffff;
+	color: #ec5c8c;
+}
+
+section{
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	padding: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+section::before{
+	content: "";
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(180deg, rgba(100,133,162,1) 0%, rgba(236,92,140,1) 0%, transparent);
+	z-index: 1000;
+}
+
+section img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+section img#sun{
+	mix-blend-mode: screen;
+	width: auto;
+}
+
+section img#mountain-front{
+	z-index: 2000;
+	align-self: flex-end;
+	width: 100%;
+}
+
+
+#feed{
+	position: absolute;
+	white-space: nowrap;
+	font-size: 8rem;
+	z-index: 2001;
+	font-family: var(--title-font);
+	color: var(--main-color);
+	background: rgba(255, 255, 255, 0.6);
+	border-radius: 20px;
+	transform: translateY(10rem);
+}
+
+#btn{
+	text-decoration: none;
+	display: inline-block;
+	padding: 8px 30px;
+	border-radius: 40px;
+	background: #ffffff;
+	color: var(--main-color);
+	font-size: 2rem;
+	z-index: 2001;
+	transform: translateY(-4rem);
+	font-family: var(--regular-font);
+	overflow: hidden;
+}
+
+.next{
+	position: relative;
+	padding: 100px;
+	background: var(--second-purple);
+}
+
+.next::after{
+	content: "";
+	background: linear-gradient(180deg, rgba(100,133,162,1) 0%, rgba(236,92,140,1) 0%, transparent);
+	z-index: 1000;
+}
+
+.next h2{
+	font-size: 4rem;
+	margin-bottom: 10px;
+	color: var(--blue-color);
+}
+
+.next p{
+	font-size: 2rem;
+	margin-bottom: 10px;
+	color: #ffffff;
+}
