@@ -7,6 +7,7 @@ from django.utils import timezone
 from django.db import models
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
+from actstream.models import Action
 
 
 # Create your models here.
@@ -46,3 +47,32 @@ class Profile(models.Model):
             str: Username info
         """
         return self.user.username
+    
+
+class Feed(models.Model):
+    """
+    Feed provides Feed stream functionality
+
+    Args:
+        models (models.Model instance): django.db object
+
+    Returns:
+        str: content of feed
+    """
+    user = Profile.user
+    content = models.CharField(max_length=360)
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-timestamp']
+
+        def __str__(self) -> str:
+            return self.content
+    
+    @staticmethod
+    def get_feed_stream(user, offset=0, limit=10):
+        """Return a paginated feed stream for the given user."""
+
+        actions = Action.objects.filter(actor_object_id=user.id)
+        feed_stream = actions[offset:offset + limit]
+        return feed_stream

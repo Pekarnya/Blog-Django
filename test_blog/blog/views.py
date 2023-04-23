@@ -6,7 +6,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages, auth
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-from .models import Profile
+from .models import Profile, Feed
 
 # Create your views here.
 
@@ -162,5 +162,9 @@ def welcome_page(request):
 
 @login_required(login_url='blog-register')
 def profile(request):
-    """Render profile page, main functionality"""
-    return render(request, 'blog/profile/profile.html')
+    """Render profile page, main functionality, pagination feed method"""
+    user = request.user
+    offset = int(request.GET.get('offset', 0))
+    limit = int(request.GET.get('limit', 0))
+    feed_stream = Feed.get_feed_stream(user, offset, limit)
+    return render(request, 'blog/profile/profile.html', {'feed_stream': feed_stream})

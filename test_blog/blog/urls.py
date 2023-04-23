@@ -2,7 +2,7 @@
 urls defined with django.urls.path
 path('', views.page_name, views.name, name)
 """
-from django.urls import path
+from django.urls import path, include
 from . import views
 
 
@@ -20,4 +20,5 @@ urlpatterns = [
     path('logout/', views.logout, name='blog-logout'),
     path('welcome/', views.welcome_page, name='blog-welcome'),
     path('profile/', views.profile, name='blog-profile'),
+    path('profile/', include('actstream.urls')),
 ]
