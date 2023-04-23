@@ -41,7 +41,11 @@ INSTALLED_APPS = [
 
     # own
     'blog.apps.BlogConfig',
+    'actstream',
+    'django.contrib.sites',
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -123,6 +127,15 @@ STATIC_URL = 'test_blog/blog/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
+
+# Act streaming
+ACTSTREAM_SETTINGS = {
+    'MANAGER': 'blog.managers.MyActionManager',
+    'FETCH_RELATIONS': True,
+    'USE_PREFETCH': True,
+    'USE_JSONFIELD': True,
+    'GFK_FETCH_DEPTH': 1,
+}
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 

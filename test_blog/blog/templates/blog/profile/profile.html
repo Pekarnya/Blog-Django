@@ -39,26 +39,18 @@
         voluptatibus quasi nulla sit, illum ex non dolor 
         temporibus culpa aliquid nobis enim omnis voluptas 
         veritatis aliquam.</p>
+
+        <div id="feed">
+            {%for action in feed_stream%}
+            <div class="feed-item">
+                <p>{{action.actor}} {{action.verb}} {{action.target}}</p>
+                <p>{{action.timestamp}}</p>
+            </div>
+            {%endfor%}
+        </div>
     </div>
 
-    <script>
-        let water = document.getElementById("water");
-        let sun = document.getElementById("sun");
-        let mountains_behind = document.getElementById("mountains-behind");
-        let mountain_front = document.getElementById("mountain-front");
-        let feed_text = document.getElementById("feed");
-        let btn = document.getElementById("btn");
-
-        window.addEventListener("scroll", function() {
-            let value = window.scrollY;
-            sun.style.top = value * 0.85 + "px";
-            mountain_front.style.top = value * 0 + "px";
-            mountains_behind.style.top = value * 0.5 + "px";
-            feed_text.style.marginRight = value * 5 + "px";
-            btn.style.marginTop = value * 1.5 + "px";
-        })
-
-    </script>
+    <script src="/test_blog\blog\static\js\profile.js"></script>
 </body>
 </html>
     
