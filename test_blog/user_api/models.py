@@ -14,8 +14,9 @@ class News(models.Model):
     """    """"""
     theme = models.CharField(max_length=35)
     body = models.TextField(max_length=500)
-    media_img = models.ImageField(width_field='145px', height_field='145px')
-    media_video = models.FileField()
+    media_img = models.ImageField(width_field='145px', height_field='145px',
+                                  blank=True)
+    media_video = models.FileField(blank=True)
 
     def __str__(self) -> str:
         return self.theme
